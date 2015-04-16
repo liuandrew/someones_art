@@ -1,0 +1,2 @@
+class StillsController < ApplicationController
+end

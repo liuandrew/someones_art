@@ -1,0 +1,2 @@
+module StillsHelper
+end

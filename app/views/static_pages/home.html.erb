@@ -1,6 +1,24 @@
+
+
 <div class="container">
-	<section id="animation"></section>
-	<section id="stills"></section>
-	<section id="requests"></section>
-	<section id="about"></section>
+	<section class="homepage-quarter" id="animation">
+		
+		<span class="noselect homepage-text">ANIMATION</span>
+	</section><!--
+	--><section class="homepage-quarter" id="stills">
+		<div id="homepage-stills-container">
+			<%= image_tag "jazz-hands", class: "homepage-stills-img hidden", id:"stills-1"%>
+			<%= image_tag "skull-study", class: "homepage-stills-img hidden", id:"stills-2"%>
+			<%= image_tag "cat-soldier", class: "homepage-stills-img hidden", id:"stills-3"%>			
+		</div>
+		<span class="noselect homepage-text">STILLS</span>
+	</section><!--
+	--><section class="homepage-quarter" id="requests">
+		<span class="noselect homepage-text">REQUESTS</span>
+	</section><!--
+	--><section class="homepage-quarter" id="about">
+		<span class="noselect homepage-text">ABOUT</span>
+	</section>
 </div>
+
+<%= javascript_include_tag "home" %>

@@ -6,11 +6,13 @@
 		<span class="noselect homepage-text">ANIMATION</span>
 	</section><!--
 	--><section class="homepage-quarter" id="stills">
-		<div id="homepage-stills-container">
-			<%= image_tag "jazz-hands", class: "homepage-stills-img hidden", id:"stills-1"%>
-			<%= image_tag "skull-study", class: "homepage-stills-img hidden", id:"stills-2"%>
-			<%= image_tag "cat-soldier", class: "homepage-stills-img hidden", id:"stills-3"%>			
-		</div>
+		<%= link_to(stills_path) do %>
+			<div id="homepage-stills-container">
+				<%= image_tag "jazz-hands", class: "homepage-stills-img hidden", id:"stills-1"%>
+				<%= image_tag "skull-study", class: "homepage-stills-img hidden", id:"stills-2"%>
+				<%= image_tag "cat-soldier", class: "homepage-stills-img hidden", id:"stills-3"%>			
+			</div>
+		<% end %>
 		<span class="noselect homepage-text">STILLS</span>
 	</section><!--
 	--><section class="homepage-quarter" id="requests">

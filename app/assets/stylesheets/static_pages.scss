@@ -11,7 +11,7 @@
 	height: 49.8%;
 	background-color: $background-color;
 	box-sizing: border-box;
-	border: 1px solid black;
+	border: 1px solid $border-color;
 	text-align: center;
 	position: relative;
 
@@ -73,4 +73,8 @@ section {
 
 .hidden {
 	display: none;
+}
+
+#stills, #about{
+	border-left: none;
 }

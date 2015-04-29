@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+	imageAnimator.pauseImageAnimation();
 	$("#stills").hover(imageAnimator.resumeImageAnimation, imageAnimator.pauseImageAnimation);
 });
 
@@ -8,6 +9,7 @@ var imageAnimator = (function(){
 	var currentImage = 1;
 	var anim;
 	var frame = 1;
+	var maxFrames = 100;
 	var x;
 	var y;
 	var initiated = false;
@@ -39,14 +41,14 @@ var imageAnimator = (function(){
 	function setAnimationInterval() {
 		$imgContainer.css("right", frame*x + "em");
 			$imgContainer.css("top", frame*y + "em");
-			if(frame <= 25) {
-				$img.css("opacity", "" + frame/25);
-			} else if(frame > 25) {
-				$img.css("opacity", "" + (1-(frame-25)/25));
+			if(frame <= (maxFrames/2)) {
+				$img.css("opacity", "" + frame/(maxFrames/2));
+			} else if(frame > (maxFrames/2)) {
+				$img.css("opacity", "" + (1-(frame-(maxFrames/2))/(maxFrames/2)));
 			}
 
 			frame++;
-			if(frame > 50) {
+			if(frame > maxFrames) {
 				$img.toggleClass("hidden");
 				clearInterval(anim);
 				nextImage();

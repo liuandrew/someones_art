@@ -49,4 +49,9 @@ table {
 body {
 	font-family: Helvetica;
 	background-color: $background-color;
+	/*background: -webkit-radial-gradient(#242424 10%, $background-color 90%);
+	background: -o-radial-gradient(#242424 10%, $background-color 90%);
+	background: -moz-radial-gradient(#242424 10%, $background-color 90%);
+	background: radial-gradient(#242424 10%, $background-color 90%);*/
+	box-shadow: 0 0 30px 30px black inset;
 }

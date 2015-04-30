@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact'
 
   get 'animations' => 'animations#index'
-  resources :stills
+  resources :drawings
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

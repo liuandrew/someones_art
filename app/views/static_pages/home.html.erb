@@ -1,26 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Brandon Liu's Art</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
 
-
-<div class="container">
-	<section class="homepage-quarter" id="animation">
-		
-		<span class="noselect homepage-text">ANIMATION</span>
-	</section><!--
-	--><section class="homepage-quarter" id="stills">
-		<%= link_to(stills_path) do %>
-			<div id="homepage-stills-container">
-				<%= image_tag "jazz-hands", class: "homepage-stills-img hidden", id:"stills-1"%>
-				<%= image_tag "skull-study", class: "homepage-stills-img hidden", id:"stills-2"%>
-				<%= image_tag "cat-soldier", class: "homepage-stills-img hidden", id:"stills-3"%>			
+	<div class="full-page">
+		<div class="container">
+			<div id="top-span" class="horizontal-div"><h1>Brandon Liu</h1></div>
+			<div class="horizontal-divider"></div>
+			<div id="bottom-div" class="horizontal-div">
+				<ul>
+					<li><%= link_to "Drawings", drawings_path %>
+						</li><!--
+					--><li><%= link_to "Animations", '#' %>
+						</li><!--
+					--><li><%= link_to "Requests", '#' %>
+						</li><!--
+					--><li><%= link_to "About", '#' %>
+						</li>
+				</ul>
 			</div>
-		<% end %>
-		<span class="noselect homepage-text">STILLS</span>
-	</section><!--
-	--><section class="homepage-quarter" id="requests">
-		<span class="noselect homepage-text">REQUESTS</span>
-	</section><!--
-	--><section class="homepage-quarter" id="about">
-		<span class="noselect homepage-text">ABOUT</span>
-	</section>
-</div>
+		</div>
+	</div>
 
-<%= javascript_include_tag "home" %>
+</body>
+</html>
+
+

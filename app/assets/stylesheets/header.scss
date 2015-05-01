@@ -1,0 +1,62 @@
+header {
+	display: block;
+}
+
+header:after {
+	clear: both;
+}
+
+#brandon-title {
+	text-align: center;
+	display: block;
+	margin: auto;
+	padding-bottom: 0.7rem;
+	padding-top: 1rem;
+	font-size: 5rem;
+}
+
+#navbar {
+	margin: auto;
+	display: block;
+	text-align: center;
+	padding-bottom: 0.5rem;
+}
+
+.nav-link {
+	display: inline-block;
+	text-align: center;
+	padding: 0 1rem 0 1rem;
+}
+
+@media(max-width: 768px) {
+	#brandon-title {
+		font-size: 3rem;
+		float: left;
+		position: relative;
+		left: 0.5rem;
+	}
+	#navbar {
+		float: right;
+		padding: 3rem 1rem 0 1rem;
+	}
+}
+
+@media(max-width: 612px) {
+	#navbar {
+		float: none;
+		clear: left;
+		padding-top: 0;
+	}
+}
+
+@media(max-width: 480px) {
+	#navbar {
+		padding: 0 0 0.5rem 0;
+	}
+}
+
+.navbar-divider {
+	clear: both;
+	margin-bottom: 1rem;
+	border-top: 1px solid #cfcfcf;
+}

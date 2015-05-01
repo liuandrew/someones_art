@@ -1,8 +1,10 @@
+@import "foundation_and_overrides";
+@import "_config.scss";
+@import "custom.scss";
 
-@import "_config.css.scss";
-@import "custom.css.scss";
 
 @import "static_pages.scss";
 @import "requests.scss";
 @import "animations.scss";
 @import "drawings.scss";
+@import "header.scss";

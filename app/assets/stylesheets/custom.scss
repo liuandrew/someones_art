@@ -80,7 +80,7 @@ body {
 }
 
 /* include this to check window width for responsive */
-/*body:after {
+body:after {
 	font-size: 300%;
 	font-weight: bold;
 	position: fixed;
@@ -123,4 +123,4 @@ body {
 		content: "1024 and up";
 		background-color: hsla(360, 60%, 40%, 0.7);
 	}
-}*/
+}

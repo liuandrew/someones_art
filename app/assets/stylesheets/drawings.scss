@@ -1,3 +1,55 @@
-// Place all the styles related to the drawings controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*index*/
+
+.drawing-container {
+	width: 250px;
+	display: inline-block;
+	margin: 2rem;
+	position: relative;
+}
+
+.image-display {
+	width: 250px;
+	height: 260px;
+	
+	
+	position: relative;
+}
+
+.drawing {
+	border: 5px solid white;
+	-webkit-box-shadow: 0px 3px 8px 1px rgba(110,110,110,1);
+	-moz-box-shadow: 0px 3px 8px 1px rgba(110,110,110,1);
+	box-shadow: 0px 3px 8px 1px rgba(110,110,110,1);
+}
+
+.index-drawing-container {
+	/*position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);*/
+}
+
+/*show*/
+
+.fullsize-drawing-container {
+	display: inline-block;
+	width: 50%;
+}
+
+.small-text {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	font-size: 0.7rem;
+	text-align: center;
+}
+
+.side-information {
+	display: inline-block;
+	width: 30%;
+	vertical-align: top;
+	padding-left: 2rem;
+	padding-top: 2rem;
+}
+
+.description {
+
+}

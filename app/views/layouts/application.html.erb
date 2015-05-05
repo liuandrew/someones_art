@@ -8,11 +8,13 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <title>Brandon Liu's Art</title>
   </head>
 
   <body>
-		<%= render 'layouts/header' %>
-    <%= yield %>
-
+    <div class="fullpage-container">
+  		<%= render 'layouts/header' %>
+      <%= yield %>
+    </div>
   </body>
 </html>

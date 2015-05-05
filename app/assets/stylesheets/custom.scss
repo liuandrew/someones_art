@@ -124,3 +124,51 @@ body:after {
 		background-color: hsla(360, 60%, 40%, 0.7);
 	}
 }
+
+/*site wide classes */
+
+.container {
+	padding-top: 2rem;
+	margin: auto;
+  box-sizing: border-box;
+  width: 90%;
+  position: relative;
+}
+
+/*h2 for show action titles*/
+
+h2 {
+	font-size: 3rem;
+	font-weight: bold;
+	padding-bottom: 2rem;
+}
+
+
+@media(max-width: 1024px) {
+	h2 {
+		font-size: 2rem;
+	}
+}
+
+@media(max-width: 768px) {
+	h2 {
+		font-size: 1.5rem;
+	}
+}
+/* h3 used as drawing/animation titles */
+
+h3 {
+	position: relative;
+	padding: 0.8rem 0;
+	font-weight: bold;
+}
+
+/*h4 as created time*/
+
+h4 {
+	font-size: 0.8rem;
+}
+
+.sliding-underline {
+	@include sliding-underline;
+}

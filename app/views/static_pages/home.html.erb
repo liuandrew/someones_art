@@ -9,18 +9,18 @@
 <body>
 
 	<div class="full-page">
-		<div class="container">
+		<div id="homepage-container">
 			<div id="top-span" class="horizontal-div"><h1>Brandon Liu</h1></div>
 			<div class="horizontal-divider"></div>
 			<div id="bottom-div" class="horizontal-div">
 				<ul>
-					<li><%= link_to "Drawings", drawings_path %>
+					<li><%= link_to "Drawings", drawings_path, class: "sliding-underline" %>
 						</li><!--
-					--><li><%= link_to "Animations", '#' %>
+					--><li><%= link_to "Animations", '#', class: "sliding-underline" %>
 						</li><!--
-					--><li><%= link_to "Requests", '#' %>
+					--><li><%= link_to "Requests", '#', class: "sliding-underline" %>
 						</li><!--
-					--><li><%= link_to "About", '#' %>
+					--><li><%= link_to "About", '#', class: "sliding-underline" %>
 						</li>
 				</ul>
 			</div>

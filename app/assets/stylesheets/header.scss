@@ -37,7 +37,7 @@ header:after {
 	}
 	#navbar {
 		float: right;
-		padding: 3rem 1rem 0 1rem;
+		padding: 3rem 1rem 0.5rem 1rem;
 	}
 }
 
@@ -47,6 +47,10 @@ header:after {
 		clear: left;
 		padding-top: 0;
 	}
+	#brandon-title {
+		float: none;
+		margin: auto;
+	}
 }
 
 @media(max-width: 480px) {
@@ -55,8 +59,7 @@ header:after {
 	}
 }
 
-.navbar-divider {
+#header-clear {
 	clear: both;
 	margin-bottom: 1rem;
-	border-top: 1px solid #cfcfcf;
 }

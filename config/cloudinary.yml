@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: brandonliu
+  api_key: '733784377492641'
+  api_secret: K3sFFtHO8Qaez6n1LFefW6_7Mkc
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: brandonliu
+  api_key: '733784377492641'
+  api_secret: K3sFFtHO8Qaez6n1LFefW6_7Mkc
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: brandonliu
+  api_key: '733784377492641'
+  api_secret: K3sFFtHO8Qaez6n1LFefW6_7Mkc
+  enhance_image_tag: true
+  static_image_support: false

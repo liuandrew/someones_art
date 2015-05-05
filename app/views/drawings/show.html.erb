@@ -1,0 +1,13 @@
+<div class="container">
+	<section class="fullsize-drawing-container">
+		<%= link_to @drawing.image_url do %>
+			<%= image_tag lower_quality(@drawing.image_url) %>
+		<% end %>
+		<p class="small-text">Click on image for full quality</p>
+	</section>
+	<section class="side-information">
+		<h2><%= @drawing.name %></h2>
+		<h4>Created on <%= @drawing.created_at.strftime("%B %e, %Y, %I:%M %p") %></h4>
+		<p class="description"><%= @drawing.description %></p>
+	</section>
+</div>

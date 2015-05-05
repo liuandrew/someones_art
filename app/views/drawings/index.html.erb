@@ -1,82 +1,19 @@
-<div class="row">
-	<div class="small-6 medium-4 large-3 columns">Hello</div>
-	<div class="small-6 medium-4 large-3 columns">Hello</div>
-	<div class="small-6 medium-4 large-3 columns">Hello</div>
-	<div class="small-6 medium-4 large-3 columns">Hello</div>
+<div class="container">
+	<div class="index-drawing-container">
+		<% @drawings.each do |drawing| %>
+			<div class="drawing-container">
+				<div class="image-display">
+				 	<%= link_to drawing do %>
+				 	 <%= image_tag(thumbnail(drawing.image_url), class: "drawing") %>
+				 	<% end %>
+				</div>
+
+				<%= link_to drawing, class: "sliding-underline" do %>
+					<h3><%= drawing.name %></h3>
+				<% end %>
+				<h4><%= drawing.created_at.strftime("%B %e, %Y, %I:%M %p") %></h4>
+			</div>
+		<% end %>
+	</div>
 </div>
-<div class="row">
-	<div class="small-6 medium-4 large-3 columns">Hello</div>
-	<div class="small-6 medium-4 large-3 columns">Hello</div>
-	<div class="small-6 medium-4 large-3 columns">Hello</div>
-	<div class="small-6 medium-4 large-3 columns">Hello</div>
-</div>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
-<p>content</p>
+

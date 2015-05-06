@@ -172,3 +172,25 @@ h4 {
 .sliding-underline {
 	@include sliding-underline;
 }
+
+/*flashes*/
+
+.alert {
+	width: 20rem;
+	margin: auto;
+	font-weight: 600;
+	text-align: center;
+	padding: 0.5rem;
+}
+
+.alert-success {
+	color: green;
+	border: 1px solid green;
+	background-color: #C1E6C5;
+}
+
+.alert-failure {
+	color: red;
+	border: 1px solid red;
+	background-color: #E6C1C1;
+}

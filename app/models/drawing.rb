@@ -1,4 +1,6 @@
 class Drawing < ActiveRecord::Base
 	validates :name, presence: true
-	validates :image_url, presence: true
+
+	attr_accessible :image
+	mount_uploader :image, ImageUploader
 end

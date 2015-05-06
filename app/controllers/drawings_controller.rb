@@ -2,7 +2,7 @@ class DrawingsController < ApplicationController
 	include DrawingsHelper
 
 	def index
-		@drawings = Drawing.all		
+		@drawings = Drawing.all.order('created_at DESC')
 	end
 
 	def show
@@ -41,7 +41,7 @@ class DrawingsController < ApplicationController
 
 	private
 		def drawing_params
-			params.require(:drawing).permit(:name, :description, :image_url)
+			params.require(:drawing).permit(:name, :description, :image, :cloudinary_url)
 		end
 
 end

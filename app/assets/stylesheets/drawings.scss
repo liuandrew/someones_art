@@ -10,8 +10,6 @@
 .image-display {
 	width: 250px;
 	height: 260px;
-	
-	
 	position: relative;
 }
 
@@ -22,10 +20,19 @@
 	box-shadow: 0px 3px 8px 1px rgba(110,110,110,1);
 }
 
-.index-drawing-container {
-	/*position: absolute;
-	left: 50%;
-	transform: translate(-50%, 0);*/
+@media(max-width: 768px) {
+	.drawing-container {
+		margin: 1rem;
+	}
+}
+
+@media(max-width: 480px) {
+	.index-name, .index-datetime {
+		display: none;
+	}
+	.drawing-container {
+		margin: 1rem;
+	}	
 }
 
 /*show*/
@@ -33,9 +40,16 @@
 .fullsize-drawing-container {
 	display: inline-block;
 	width: 50%;
+	position: relative;
+	img {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 }
 
 .small-text {
+	clear: both;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 	font-size: 0.7rem;
@@ -53,3 +67,4 @@
 .description {
 	padding-top: 2rem;
 }
+

@@ -3,7 +3,7 @@ class CreateDrawings < ActiveRecord::Migration
     create_table :drawings do |t|
     	t.string :name
     	t.text :description
-    	t.text :image_url
+    	t.string :image
       t.timestamps null: false
     end
   end

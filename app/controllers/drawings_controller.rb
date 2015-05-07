@@ -1,4 +1,5 @@
 class DrawingsController < ApplicationController
+	before_action :authenticate_admin, except: [:index, :show]
 	include DrawingsHelper
 
 	def index
@@ -44,4 +45,7 @@ class DrawingsController < ApplicationController
 			params.require(:drawing).permit(:name, :description, :image, :cloudinary_url)
 		end
 
+		def authenticate_admin
+			redirect_to root_path unless logged_in?
+		end
 end

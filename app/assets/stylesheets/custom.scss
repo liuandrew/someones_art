@@ -186,11 +186,27 @@ h4 {
 .alert-success {
 	color: green;
 	border: 1px solid green;
-	background-color: #C1E6C5;
+	background-color: $flash-success;
 }
 
 .alert-failure {
 	color: red;
 	border: 1px solid red;
-	background-color: #E6C1C1;
+	background-color: $flash-failure;
+}
+
+/*admin footer*/
+
+#admin {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+
+	background-color: $flash-success;
+	border: 1px solid green;
+	padding: 0.5rem;
+
+	span {
+		float: left;
+	}
 }

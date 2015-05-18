@@ -1,0 +1,27 @@
+<div class="container">
+	<section class="fullsize-animation-container">
+		
+			<% if !@animation.cloudinary_url.nil? %>
+				<%= link_to @animation.cloudinary_url do %>
+					<%= image_tag lower_quality(@animation.cloudinary_url) %>
+				<% end %>
+			<% elsif !@animation.video_url.nil? %>
+				<%= link_to @animation.video_url do %>
+					<%= image_tag @animation.video_url(:preview) %>
+				<% end %>
+		<% end %>
+		<p class="small-text">Click on image for full quality</p>
+	</section>
+	<section class="side-information">
+		<h2><%= @animation.name %></h2>
+		<h4>Created on <%= @animation.created_at.strftime("%B %e, %Y, %I:%M %p") %></h4>
+		<p class="description"><%= @animation.description %></p>
+	</section>
+
+
+	<% if logged_in? %>
+		<div id="edit-button">
+			<%= link_to "Click to edit this entry", edit_drawing_path %>
+		</div>
+	<% end %>
+</div>

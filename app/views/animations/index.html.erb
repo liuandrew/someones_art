@@ -1,2 +1,21 @@
-<!-- test -->
-<section></section>
+<div class="container">
+	<% @animations.each do |animation| %>
+		<div class="animation-container">
+			<div class="image-display">
+				<%= link_to animation do %>
+					<% if !animation.cloudinary_url.nil? %>
+						<%= image_tag thumbnail(animation.cloudinary_url), class: "animation" %>
+				 	<% elsif !animation.video_url.nil?%>
+				 	  <%= image_tag animation.video_url(:thumbnail), class: "animation" %>
+				 	<% end %>
+			 	<% end %>
+			</div>
+
+			<%= link_to animation, class: "sliding-underline" do %>
+				<h3 class="index-name"><%= animation.name %></h3>
+			<% end %>
+			<h4 class="index-datetime"><%= animation.created_at.strftime("%B %e, %Y, %I:%M %p") %></h4>
+		</div>
+	<% end %>
+</div>
+

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150506161607) do
+ActiveRecord::Schema.define(version: 20150512050008) do
+
+  create_table "animations", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "video"
+    t.string   "cloudinary_url"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "drawings", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +29,14 @@ ActiveRecord::Schema.define(version: 20150506161607) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "cloudinary_url"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "votes"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'animations' => 'animations#index'
   resources :drawings
+  resources :animations
+  resources :requests, except: [:show]
 
   get 'adminlogin' => 'sessions#new'
   post 'adminlogin' => 'sessions#create'

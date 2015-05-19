@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+50.times do |n|
+	title = "Post number #{n}"
+	description = "This is the number #{n} fake post"
+	Request.create!(title: title, description: description)
+end

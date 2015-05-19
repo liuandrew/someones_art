@@ -1,6 +1,6 @@
 <div class="container">
 	<%= form_for @animation do |f| %>
-		<%= render 'fields', f: f %>
+		<%= render 'layouts/fields', f: f %>
 
 		<%= f.label :video, "Or upload a new video to Cloudinary" %>
 		<%= f.hidden_field :video_cache %>

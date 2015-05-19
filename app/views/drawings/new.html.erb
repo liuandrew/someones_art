@@ -1,6 +1,6 @@
 <div class="container">
 	<%= form_for @drawing do |f| %>
-		<%= render 'fields', f: f %>
+		<%= render 'layouts/fields', f: f %>
 		
 		<%= f.label :image, "Or upload a new image to Cloudinary" %>
 		<%= f.hidden_field :image_cache %>

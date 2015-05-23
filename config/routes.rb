@@ -13,10 +13,12 @@ Rails.application.routes.draw do
   resources :drawings
   resources :animations
   resources :requests, except: [:show]
+  resources :votes, only: [:create, :destroy]
 
   get 'adminlogin' => 'sessions#new'
   post 'adminlogin' => 'sessions#create'
   delete 'adminlogout' => 'sessions#destroy'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

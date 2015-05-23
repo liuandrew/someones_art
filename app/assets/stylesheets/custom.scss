@@ -214,3 +214,36 @@ h4 {
 		float: left;
 	}
 }
+
+/*pagination*/
+
+.pagination {
+	margin: 1rem;
+
+	a, em {
+		padding: 0 0.3rem;
+	}
+	em {
+		position: relative;
+	}
+	.current::after {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		right: -3px;
+		bottom: -2px;
+		width: 1.5rem;
+		height: 1.5rem;
+		border-radius: 50%;
+		background-color: #EDEDED;
+		z-index: -1;
+	}
+
+	.previous_page {
+		padding-right: 0.3rem;
+	}
+
+	.next_page {
+		padding-left: 0.3rem;
+	}
+}

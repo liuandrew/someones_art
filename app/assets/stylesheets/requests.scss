@@ -5,7 +5,6 @@
 .request-page-container {
 	padding-top: 2rem;
 	margin: auto;
-  box-sizing: border-box;
   width: 70%;
   position: relative;
 }
@@ -14,10 +13,13 @@
 	border: 1px solid $border-color;
 	margin-bottom: 2rem;
 	padding: 0 1rem 1rem 1rem;
-	overflow: scroll;
+	overflow: hidden;
+	word-wrap: break-word;
+	box-sizing: border-box;
 	h3 {
 		margin: 0.5rem 0;
 		font-size: 2rem;
+		margin-right: 1.5rem;
 	}
 }
 
@@ -26,4 +28,66 @@
 	position: relative;
 	bottom: 0.5rem;
 	right: 0.5rem;
+}
+
+/*arrow icons*/
+
+.diag-up-right-line, .diag-up-left-line {
+	width: 7px;
+	height: 16px;
+	float: left;
+	position: absolute;
+	border-radius: 1px;
+	background-color: black;
+}
+
+.up-arrow {
+	.diag-up-right-line {
+		right: 0;
+		transform: rotate(45deg);
+	}
+	.diag-up-left-line {
+		left: 0;
+		transform: rotate(-45deg);
+	}
+}
+
+.down-arrow {
+	position: relative;
+	top: 8px;
+		.diag-up-right-line {
+		left: 0;
+		transform: rotate(45deg);
+	}
+	.diag-up-left-line {
+		right: 0;
+		transform: rotate(-45deg);
+	}
+}
+
+/*vote form styling*/
+
+.votes {
+	position: relative;
+	float: right;
+	right: 15px;
+	top: 5px;
+}
+
+.new_vote {
+	display: block;
+	background-color: transparent;
+	button {
+		background-color: transparent;
+		padding: 0;
+		border: none;
+		margin: 0;
+		width: 24px;
+		height: 16px;
+	}
+}
+
+.new_vote > button {
+	width: 0;
+	height: 0;
 }

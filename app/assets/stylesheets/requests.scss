@@ -38,7 +38,7 @@
 	float: left;
 	position: absolute;
 	border-radius: 1px;
-	background-color: black;
+	background-color: hsl(0, 0, 50);
 }
 
 .up-arrow {
@@ -49,6 +49,9 @@
 	.diag-up-left-line {
 		left: 0;
 		transform: rotate(-45deg);
+	}
+	.voted {
+		background-color: hsl(210, 40, 50); 
 	}
 }
 
@@ -63,6 +66,9 @@
 		right: 0;
 		transform: rotate(-45deg);
 	}
+	.voted {
+		background-color: hsl(0, 40, 50);
+	}
 }
 
 /*vote form styling*/
@@ -74,7 +80,7 @@
 	top: 5px;
 }
 
-.new_vote {
+.new_vote, .edit_vote {
 	display: block;
 	background-color: transparent;
 	button {
@@ -88,6 +94,10 @@
 }
 
 .new_vote > button {
+	width: 0;
+	height: 0;
+}
+.edit_vote > button {
 	width: 0;
 	height: 0;
 }

@@ -1,8 +1,9 @@
 class RequestsController < ApplicationController
 	before_action :authenticate_admin, except: [:index, :create]
 	def index
-		@requests = Request.paginate(:page => params[:page], :per_page => 25)
+		@requests = Request.order(vote_total: :desc).paginate(:page => params[:page], :per_page => 25)
 		@new_request = Request.new
+		@vote_cookies = retrieve_vote_cookies
 	end
 
 	# show maybe not required
@@ -16,6 +17,7 @@ class RequestsController < ApplicationController
 
 	def create
 		@request = Request.new(request_params)
+		@request.vote_total = 0
 		if @request.save
 			flash[:success] = "Your request has been successfully saved!"
 			redirect_to requests_path

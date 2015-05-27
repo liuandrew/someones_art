@@ -1,0 +1,57 @@
+<div class="votes">
+	<% vote_hash = vote_direction(request.id) %>
+	<% if vote_hash.empty? %>
+		<% down = false %>
+		<% up = false %>
+	<% else %>
+		<% down = (vote_hash[:direction] == "-1") %>
+		<% up = (vote_hash[:direction] == "1") %>
+	<% end %>
+
+	<% if up && Vote.find_by(id: vote_hash[:vote_id]) %>
+		<%= form_for(Vote.find_by(id: vote_hash[:vote_id]), method: :delete, remote: true) do |f| %>
+			<div>
+				<%= hidden_field_tag :value, 1 %>
+			</div>
+			<%= f.button :submit, class: "up-arrow" do %>
+				<div class="diag-up-right-line voted"></div>
+				<div class="diag-up-left-line voted"></div>
+			<% end %>
+		<% end %>
+	<% else %>
+			<%= form_for(request.votes.build, remote: true) do |f| %>
+				<div>
+					<%= hidden_field_tag :request_id, request.id %>
+					<%= hidden_field_tag :value, 1 %>
+				</div>
+				<%= f.button :submit, class: "up-arrow" do %>
+					<div class="diag-up-right-line"></div>
+					<div class="diag-up-left-line"></div>
+				<% end %>
+			<% end %>
+	<% end %>
+
+
+	<% if down && Vote.find_by(id: vote_hash[:vote_id])%>
+		<%= form_for(Vote.find_by(id: vote_hash[:vote_id]), method: :delete, remote: true) do |f| %>
+			<div>
+				<%= hidden_field_tag :value, -1 %>
+			</div>
+			<%= f.button :submit, class: "down-arrow" do %>
+				<div class="diag-up-right-line voted"></div>
+				<div class="diag-up-left-line voted"></div>
+			<% end %>
+		<% end %>
+	<% else %>
+		<%= form_for(request.votes.build, remote: true) do |f| %>
+			<div>
+				<%= hidden_field_tag :request_id, request.id %>
+				<%= hidden_field_tag :value, -1 %>
+			</div>
+			<%= f.button :submit, class: "down-arrow" do %>
+				<div class="diag-up-right-line"></div>
+				<div class="diag-up-left-line"></div>
+			<% end %>
+		<% end %>
+	<% end %>
+</div>

@@ -4,29 +4,9 @@
 	<% @requests.each do |request| %>
 		<div class="request-container">
 
-		<div class="votes">
-		<%= form_for(request.votes.build) do |f| %>
-			<div>
-				<%= hidden_field_tag :request_id, request.id %>
-				<%= hidden_field_tag :value, 1 %>
-			</div>
-			<%= f.button :submit, class: "up-arrow" do %>
-					<div class="diag-up-right-line"></div>
-					<div class="diag-up-left-line"></div>
-			<% end %>
-		<% end %>
+		<%= render 'votes', :request => request %>
 
-		<%= form_for(request.votes.build) do |f| %>
-			<div>
-				<%= hidden_field_tag :request_id, request.id %>
-				<%= hidden_field_tag :value, -1 %>
-			</div>
-			<%= f.button :submit, class: "down-arrow" do %>
-				<div class="diag-up-right-line"></div>
-				<div class="diag-up-left-line"></div>
-			<% end %>
-		<% end %>
-		</div>
+		
 
 			<h3><%= request.title %></h2>
 			<p><%= request.description %></p>
@@ -41,7 +21,7 @@
 
 	<%= will_paginate @requests %>
 
-	<h2>Submit your request or idea!</h2>
+	<h2>Submit your request or idea!<%= @vote_cookies %></h2>
 	<%= form_for @new_request do |f| %>
 		<%= f.label :title %>
 		<%= f.text_field :title %>

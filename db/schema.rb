@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150520164246) do
+ActiveRecord::Schema.define(version: 20150527163710) do
 
   create_table "animations", force: :cascade do |t|
     t.string   "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150520164246) do
     t.integer  "votes"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "vote_total"
   end
 
   create_table "votes", force: :cascade do |t|
@@ -45,5 +46,7 @@ ActiveRecord::Schema.define(version: 20150520164246) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "votes", ["request_id"], name: "index_votes_on_request_id"
 
 end

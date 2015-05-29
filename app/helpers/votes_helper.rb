@@ -10,13 +10,14 @@ module VotesHelper
 			cookies.permanent[:vote_values] = "#{value}"
 			cookies.permanent[:vote_id] = "#{vote_id}"
 		elsif position = vote_cookies[:request_id].index("#{request_id}")
+			delete_vote_id = vote_cookies[:vote_id][position]
 			vote_cookies[:request_id].delete_at(position)
 			vote_cookies[:vote_values].delete_at(position)
 			vote_cookies[:vote_id].delete_at(position)
 			cookies.permanent[:request_id] = vote_cookies[:request_id].join(", ") + ", #{request_id}"
 			cookies.permanent[:vote_values] = vote_cookies[:vote_values].join(", ") + ", #{value}"
 			cookies.permanent[:vote_id] = vote_cookies[:vote_id].join(", ") + ", #{vote_id}"
-			Vote.create({request_id: request_id, value: value})
+			Vote.find(delete_vote_id).delete()
 		else 
 			cookies.permanent[:request_id] = cookies[:request_id] + ", #{request_id}"
 			cookies.permanent[:vote_values] = cookies[:vote_values] + ", #{value}"

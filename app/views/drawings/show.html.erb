@@ -1,11 +1,11 @@
 <div class="container">
 	<section class="fullsize-drawing-container">
 		
-			<% if !@drawing.cloudinary_url.nil? %>
+			<% if !@drawing.cloudinary_url.empty? %>
 				<%= link_to @drawing.cloudinary_url do %>
 					<%= image_tag lower_quality(@drawing.cloudinary_url) %>
 				<% end %>
-			<% elsif !@drawing.image_url.nil? %>
+			<% elsif !@drawing.image_url.empty? %>
 				<%= link_to @drawing.image_url do %>
 					<%= image_tag @drawing.image_url(:preview) %>
 				<% end %>
@@ -22,6 +22,9 @@
 	<% if logged_in? %>
 		<div id="edit-button">
 			<%= link_to "Click to edit this entry", edit_drawing_path %>
+			<%= form_for @drawing, method: :delete do |f|%>
+				<%= f.submit "Click to delete this entry" %>
+			<% end %>
 		</div>
 	<% end %>
 </div>

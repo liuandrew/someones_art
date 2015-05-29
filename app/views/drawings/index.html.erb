@@ -1,20 +1,25 @@
-<div class="container">
+<div class="container" id="drawing-page-container">
 	<% @drawings.each do |drawing| %>
 		<div class="drawing-container">
 			<div class="image-display">
 				<%= link_to drawing do %>
-					<% if !drawing.cloudinary_url.nil? %>
+					<% if !drawing.cloudinary_url.empty? %>
 						<%= image_tag thumbnail(drawing.cloudinary_url), class: "drawing" %>
-				 	<% elsif !drawing.image_url.nil?%>
+				 	<% elsif !drawing.image_url.empty?%>
 				 	  <%= image_tag drawing.image_url(:thumbnail), class: "drawing" %>
 				 	<% end %>
+				 	<div class="drawing-overlay">
+						<h3 class="index-name"><%= drawing.name %></h3>
+						<h4 class="index-datetime"><%= drawing.created_at.strftime("%B %e, %Y, %I:%M %p") %></h4>
+					</div>
 			 	<% end %>
 			</div>
+		</div>
+	<% end %>
 
-			<%= link_to drawing, class: "sliding-underline" do %>
-				<h3 class="index-name"><%= drawing.name %></h3>
-			<% end %>
-			<h4 class="index-datetime"><%= drawing.created_at.strftime("%B %e, %Y, %I:%M %p") %></h4>
+	<% if logged_in? %>
+		<div class="new-button">
+			<%= link_to "Click here to add a new drawing", new_drawing_path %>
 		</div>
 	<% end %>
 </div>

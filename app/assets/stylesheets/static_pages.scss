@@ -34,8 +34,8 @@ ul {
 
 li {
 	display: inline-block;
-	width: 25%;
-	padding-bottom: 0.2rem;
+	width: 33%;
+	padding-bottom: 1rem;
 }
 
 h1 {
@@ -51,4 +51,19 @@ h1 {
   top: 40%;
   transform: translateY(-50%);
   box-sizing: border-box;
+}
+
+
+/*window sizing*/
+
+@media(max-width: 768px) {
+	h1 {
+		font-size: 6rem;
+	}
+}
+
+@media(max-width: 538px) {
+	h1{
+		font-size: 4rem;
+	}
 }

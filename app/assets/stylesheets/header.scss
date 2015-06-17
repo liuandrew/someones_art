@@ -28,38 +28,73 @@ header:after {
 	padding: 0 1rem 0 1rem;
 }
 
+@media(min-width: 768px) {
+	.compact-nav {
+		display: none;
+	}
+}
+
 @media(max-width: 768px) {
 	#brandon-title {
 		font-size: 3rem;
 		float: left;
 		position: relative;
-		left: 0.5rem;
+		left: 2rem;
+		top: 1rem;
 	}
-	#navbar {
+	.compact-nav .navbar {
+		display: none;
+		position: absolute;
+		right: 3rem;
+		top: 6rem;
 		float: right;
-		padding: 3rem 1rem 0.5rem 1rem;
-	}
-}
+		padding: 0 1rem 0.5rem 1rem;
+		z-index: 1;
+		background-color: hsla(0, 0%, 70%, 1);
+		.nav-link {
+			display: block;
+			float: none;
+			padding: 1rem 2rem 0.5rem 0.5rem;
+			text-align: left;
+		}
+		.drop-down-after:after {
+			content: "";
+			width: 191%;
+			border: 1px solid hsla(0, 0%, 60%, 1);
+			position: relative;
+			top: 0.6rem;
+			display: block;
+			right: 1.5rem;
 
-@media(max-width: 612px) {
-	#navbar {
-		float: none;
-		clear: left;
-		padding-top: 0;
+		}
 	}
-	#brandon-title {
-		float: none;
-		margin: auto;
-	}
-}
 
-@media(max-width: 480px) {
+	.compact-nav {
+		display: block;
+	}
+
 	#navbar {
-		padding: 0 0 0.5rem 0;
+		display: none;
 	}
 }
 
 #header-clear {
 	clear: both;
 	margin-bottom: 1rem;
+}
+
+/*compact menu icon*/
+
+.menu-icon {
+	float: right;
+	position: relative;
+	right: 3rem;
+	top: 3rem;
+}
+
+.menu-horizontal-line {
+	background-color: black;
+	width: 3rem;
+	height: 0.5rem;
+	margin-bottom: 0.5rem;
 }

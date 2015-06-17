@@ -15,6 +15,8 @@
 //= require foundation
 //= require turbolinks
 //= require requests
+//= require header
 
 
 $(function(){ $(document).foundation(); });
+

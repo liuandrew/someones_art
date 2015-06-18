@@ -21,7 +21,8 @@
 
 	<%= will_paginate @requests %>
 
-	<h2>Submit your request or idea!<%= @vote_cookies %></h2>
+	<br>
+	<h2>Submit your request or idea!</h2>
 	<%= form_for @new_request do |f| %>
 		<%= f.label :title %>
 		<%= f.text_field :title %>

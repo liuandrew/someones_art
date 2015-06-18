@@ -1,3 +1,123 @@
 // Place all the styles related to the animations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*index*/
+
+.animation-container {
+	width: 394px;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+	display: inline-block;
+	position: relative;
+}
+
+.youtube_thumbnail {
+	width: 384px;
+	height: 288px;
+}
+
+.animation-thumbnail-display {
+	width: 394px;
+	position: relative;
+	border: 5px solid white;
+	-webkit-box-shadow: 0px 3px 8px 1px rgba(110,110,110,1);
+	-moz-box-shadow: 0px 3px 8px 1px rgba(110,110,110,1);
+	box-shadow: 0px 3px 8px 1px rgba(110,110,110,1);
+
+	&:hover {
+		.animation-thumbnail-overlay {
+			opacity: 1.0;
+		}
+	}
+}
+
+.animation-thumbnail-overlay {
+	opacity: 0;
+	position: absolute;
+	bottom: 4px;
+	-webkit-transform: translateY(-0%);
+  -ms-transform: translateY(-0%);
+  transform: translateY(-0%);
+  width: 384px;
+
+  transition: opacity 0.5s;
+
+	h3, h4 {
+		padding: none;
+		max-width: 400px;
+		word-wrap: break-word;
+		color: white;
+		position: relative;
+		bottom: 0.8rem;
+		opacity: 0.9;
+		left: 0.5rem;
+		text-shadow: 1px 1px 2px hsl(0, 0%, 0%);
+	}
+
+	h3 {
+		margin-top: 1rem;
+	}
+	background: linear-gradient(hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 1));
+}
+
+#animation-page-container {
+	width: 1240px;
+}
+
+@media(max-width: 1250px) {
+	#animation-page-container {
+		width: 830px;
+	}
+}
+
+@media(max-width: 840px) {
+	#animation-page-container {
+		width: 420px;
+	}
+}
+
+
+/*show*/
+
+.fullsize-animation-container {
+	width: 100%;
+	margin: auto;
+	display: block;
+
+	iframe {
+		display: block;
+		margin: auto;
+		width: 853px;
+		height: 480px;
+	}
+}
+
+.animation-side-information {
+	padding-top: 2rem;
+	width: 80%;
+	margin: auto;
+	display: block;
+}
+
+@media(max-width: 1024px) {
+	.fullsize-animation-container iframe {
+		width: 640px;
+		height: 360px;
+	}
+}
+
+@media(max-width: 768px) {
+	.fullsize-animation-container iframe {
+		width: 560px;
+		height: 315px;
+	}
+}
+
+@media (max-width: 640px) {
+	.fullsize-animation-container iframe {
+		width: 426px;
+		height: 270px;
+	}
+}
+

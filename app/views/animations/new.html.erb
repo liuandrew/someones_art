@@ -1,10 +1,13 @@
 <div class="container">
 	<%= form_for @animation do |f| %>
-		<%= render 'layouts/fields', f: f %>
 
-		<%= f.label :video, "Or upload a new video to Cloudinary" %>
-		<%= f.hidden_field :video_cache %>
-		<%= f.file_field :video %>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+		<%= f.label :description %>
+		<%= f.text_area :description %>
+
+		<%= f.label :youtube_id, "Enter the unique Youtube ID here" %>
+		<%= f.text_field :youtube_id %>
 
 		<%= f.submit "Add a new animation" %>
 	<% end %>

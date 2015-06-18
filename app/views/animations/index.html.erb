@@ -1,20 +1,21 @@
-<div class="container">
+<div class="container" id="animation-page-container">
 	<% @animations.each do |animation| %>
 		<div class="animation-container">
-			<div class="image-display">
+			<div class="animation-thumbnail-display">
 				<%= link_to animation do %>
-					<% if !animation.cloudinary_url.nil? %>
-						<%= image_tag thumbnail(animation.cloudinary_url), class: "animation" %>
-				 	<% elsif !animation.video_url.nil?%>
-				 	  <%= image_tag animation.video_url(:thumbnail), class: "animation" %>
-				 	<% end %>
-			 	<% end %>
+					<%= image_tag youtube_thumbnail_url(animation.youtube_id), class: "youtube_thumbnail" %>
+					<div class="animation-thumbnail-overlay">
+						<h3 class="index-name"><%= animation.name %></h3>
+						<h4 class="index-datetime"><%= animation.created_at.strftime("%B %e, %Y, %I:%M %p") %></h4>
+					</div>
+				<% end %>
 			</div>
+		</div>
+	<% end %>
 
-			<%= link_to animation, class: "sliding-underline" do %>
-				<h3 class="index-name"><%= animation.name %></h3>
-			<% end %>
-			<h4 class="index-datetime"><%= animation.created_at.strftime("%B %e, %Y, %I:%M %p") %></h4>
+	<% if logged_in? %>
+		<div class="new-button">
+			<%= link_to "Click here to add a new animation", new_animation_path %>
 		</div>
 	<% end %>
 </div>

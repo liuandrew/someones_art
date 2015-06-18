@@ -1,14 +1,14 @@
 <div class="container" id="drawing-page-container">
 	<% @drawings.each do |drawing| %>
 		<div class="drawing-container">
-			<div class="image-display">
+			<div class="thumbnail-display">
 				<%= link_to drawing do %>
 					<% if !drawing.cloudinary_url.empty? %>
 						<%= image_tag thumbnail(drawing.cloudinary_url), class: "drawing" %>
 				 	<% elsif !drawing.image_url.empty?%>
 				 	  <%= image_tag drawing.image_url(:thumbnail), class: "drawing" %>
 				 	<% end %>
-				 	<div class="drawing-overlay">
+				 	<div class="thumbnail-overlay">
 						<h3 class="index-name"><%= drawing.name %></h3>
 						<h4 class="index-datetime"><%= drawing.created_at.strftime("%B %e, %Y, %I:%M %p") %></h4>
 					</div>

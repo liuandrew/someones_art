@@ -14,7 +14,7 @@ class AnimationsController < ApplicationController
 	end
 
 	def create
-		@animation = Animation.new(drawing_params)
+		@animation = Animation.new(animation_params)
 		if @animation.save
 			flash[:success] = "Animation successfully saved!"
 			redirect_to @animation
@@ -30,7 +30,7 @@ class AnimationsController < ApplicationController
 
 	def update
 		@animation = Animation.find(params[:id])
-		if @animation.update_attributes(drawing_params)
+		if @animation.update_attributes(animation_params)
 			flash[:success] = "Animation successfully edited!"
 			redirect_to @animation
 		else
@@ -45,7 +45,7 @@ class AnimationsController < ApplicationController
 
 	private
 		def animation_params
-			params.require(:animation).permit(:name, :description, :video, :cloudinary_url)
+			params.require(:animation).permit(:name, :description, :youtube_id)
 		end
 
 		def authenticate_admin

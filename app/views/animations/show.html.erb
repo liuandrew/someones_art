@@ -1,18 +1,8 @@
 <div class="container">
 	<section class="fullsize-animation-container">
-		
-			<% if !@animation.cloudinary_url.nil? %>
-				<%= link_to @animation.cloudinary_url do %>
-					<%= image_tag lower_quality(@animation.cloudinary_url) %>
-				<% end %>
-			<% elsif !@animation.video_url.nil? %>
-				<%= link_to @animation.video_url do %>
-					<%= image_tag @animation.video_url(:preview) %>
-				<% end %>
-		<% end %>
-		<p class="small-text">Click on image for full quality</p>
+		<iframe width="560" height="315" src="<%= youtube_video_embed_url(@animation.youtube_id) %>" frameborder="0" allowfullscreen></iframe>
 	</section>
-	<section class="side-information">
+	<section class="animation-side-information">
 		<h2><%= @animation.name %></h2>
 		<h4>Created on <%= @animation.created_at.strftime("%B %e, %Y, %I:%M %p") %></h4>
 		<p class="description"><%= @animation.description %></p>
@@ -21,7 +11,7 @@
 
 	<% if logged_in? %>
 		<div id="edit-button">
-			<%= link_to "Click to edit this entry", edit_drawing_path %>
+			<%= link_to "Click to edit this entry", edit_animation_path %>
 		</div>
 	<% end %>
 </div>

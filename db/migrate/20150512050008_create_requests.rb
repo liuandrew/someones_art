@@ -3,7 +3,6 @@ class CreateRequests < ActiveRecord::Migration
     create_table :requests do |t|
     	t.string :title
     	t.text :description
-    	t.integer :votes
 
       t.timestamps null: false
     end

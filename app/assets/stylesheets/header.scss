@@ -28,6 +28,11 @@ header:after {
 	padding: 0 1rem 0 1rem;
 }
 
+.compact-nav {
+	position: relative;
+	top: 2rem;
+}
+
 @media(min-width: 768px) {
 	.compact-nav {
 		display: none;
@@ -50,12 +55,21 @@ header:after {
 		float: right;
 		padding: 0 1rem 0.5rem 1rem;
 		z-index: 1;
-		background-color: hsla(0, 0%, 70%, 1);
+		background-color: #666;
+		opacity: 0.98;
+		border-radius: 3px;
+
 		.nav-link {
 			display: block;
 			float: none;
 			padding: 1rem 2rem 0.5rem 0.5rem;
 			text-align: left;
+		}
+		a {
+			color: hsl(230, 10%, 70%);
+			&:hover {
+				color: hsl(230, 10%, 55%);
+			}
 		}
 		.drop-down-after:after {
 			content: "";
@@ -93,7 +107,7 @@ header:after {
 }
 
 .menu-horizontal-line {
-	background-color: black;
+	background-color: hsl(230, 10%, 18%);
 	width: 3rem;
 	height: 0.5rem;
 	margin-bottom: 0.5rem;

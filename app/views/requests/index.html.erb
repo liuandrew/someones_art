@@ -33,12 +33,15 @@
 	<%= will_paginate @requests %>
 
 	<br>
-	<h2>Submit your request or idea!</h2>
-	<%= form_for @new_request do |f| %>
-		<%= f.label :title %>
-		<%= f.text_field :title %>
-		<%= f.label :description %>
-		<%= f.text_area :description %>
-		<%= f.submit "Write in your request!" %>
-	<% end %>
+	<section class="request-submit">
+		<h2>Submit your request or idea!</h2>
+		<h4>Your request will first be screened before showing on the public page</h4><br>
+		<%= form_for @new_request do |f| %>
+			<%= f.label :title, "Title *" %>
+			<%= f.text_field :title %>
+			<%= f.label :description %>
+			<%= f.text_area :description %>
+			<%= f.submit "Write in your request!", class: "form-submit" %>
+		<% end %>
+	</section>
 </div>

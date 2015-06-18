@@ -79,6 +79,7 @@ h1 {
 .profile {
 	display: inline-block;
 	width: 40%;
+	margin-bottom: 2rem;
 
 	border: 5px solid white;
 	-webkit-box-shadow: 0px 3px 8px 1px rgba(110,110,110,1);
@@ -92,4 +93,33 @@ h1 {
 	width: 55%;
 	padding-left: 2rem;
 
+}
+
+@media(max-width: 768px) {
+	.profile, .about-information {
+		display: block;
+		width: 100%;
+	}
+
+	.about-information {
+		padding-left: 0;
+	}
+}
+
+/*contact page*/
+
+#contact-page-container {
+	width: 100%;
+	text-align: center;
+	margin: auto;
+	display: block;
+
+	ul {
+		display: inline-block;
+		text-align: left;
+	}
+
+	li {
+		display: block;
+	}
 }

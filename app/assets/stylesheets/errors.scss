@@ -1,0 +1,11 @@
+.error-container {
+	padding-top: 2rem;
+	width: 35%;
+	margin: auto;
+}
+
+@media(max-width: 768px) {
+	.error-container{
+		width: 70%
+	}
+}

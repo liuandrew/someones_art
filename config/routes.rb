@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'errors/file_not_found'
+
   get 'sessions/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -21,6 +23,10 @@ Rails.application.routes.draw do
   get 'adminlogin' => 'sessions#new'
   post 'adminlogin' => 'sessions#create'
   delete 'adminlogout' => 'sessions#destroy'
+
+  # catch 404 error
+  match '/404', to: 'errors#file_not_found', via: :all
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

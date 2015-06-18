@@ -1,14 +1,25 @@
 <div class="request-page-container">
+	<% if logged_in? %><h3>Currently logged in as admin, showing requests by newest and not by vote total</h3><% end %>
 	<%= will_paginate @requests %>
 
 	<% @requests.each do |request| %>
 		<div class="request-container">
 
 		<%= render 'votes', :request => request %>
-
-		
-
-			<h3><%= request.title %></h2>
+			<span>
+				<h3><%= request.title %></h3>
+				<% if logged_in? %>
+					<% if request.verified? %>
+						<%= button_to request_unverify_path(request), class: "verify-button" do %>
+							<p class="verified">[VERIFIED]</p>
+						<% end %>
+					<% else %>
+						<%= button_to request_verify_path(request), class: "verify-button" do %>
+							<p class="unverified">[UNVERIFIED]</p>
+						<% end %>
+					<% end %>
+				<% end %>
+			</span>
 			<p><%= request.description %></p>
 
 			<% if logged_in? %>

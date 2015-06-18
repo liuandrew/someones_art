@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   get 'animations' => 'animations#index'
   resources :drawings
   resources :animations
-  resources :requests, except: [:show]
+  resources :requests, except: [:show] do
+    post 'verify'
+    post 'unverify'
+  end
   resources :votes, only: [:create, :destroy]
 
   get 'adminlogin' => 'sessions#new'

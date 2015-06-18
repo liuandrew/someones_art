@@ -18,7 +18,7 @@
 	box-sizing: border-box;
 	h3 {
 		margin: 0.5rem 0;
-		font-size: 2rem;
+		font-size: 1.5rem;
 		margin-right: 1.5rem;
 	}
 }
@@ -100,4 +100,19 @@
 .edit_vote > button {
 	width: 0;
 	height: 0;
+}
+
+/*verification*/
+
+.verify-button {
+	background-color: #666;
+	padding: 0.2rem;
+}
+
+.verified {
+	color: $flash-success;
+}
+
+.unverified {
+	color: $flash-failure;
 }

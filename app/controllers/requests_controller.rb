@@ -1,7 +1,11 @@
 class RequestsController < ApplicationController
 	before_action :authenticate_admin, except: [:index, :create]
 	def index
-		@requests = Request.order(vote_total: :desc).paginate(:page => params[:page], :per_page => 25)
+		if(logged_in?)
+			@requests = Request.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 25)
+		else
+			@requests = Request.where(verified: true).order(vote_total: :desc).paginate(:page => params[:page], :per_page => 25)
+		end
 		@new_request = Request.new
 		@vote_cookies = retrieve_vote_cookies
 	end
@@ -41,8 +45,24 @@ class RequestsController < ApplicationController
 		redirect_to requests_path
 	end
 
+	# verification methods
+
+	def verify
+		Request.find(params[:request_id]).update(verified: true)
+		redirect_to requests_path
+	end
+
+	def unverify
+		Request.find(params[:request_id]).update(verified: false)
+		redirect_to requests_path
+	end
+
 	private
 		def request_params
-			params.require(:request).permit(:title, :description)
+			params.require(:request).permit(:title, :description, :verified)
+		end
+
+		def authenticate_admin
+			redirect_to root_path unless logged_in?
 		end
 end

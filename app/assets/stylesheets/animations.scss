@@ -21,8 +21,6 @@
 	width: 394px;
 	position: relative;
 	border: 5px solid white;
-	-webkit-box-shadow: 0px 3px 8px 1px rgba(110,110,110,1);
-	-moz-box-shadow: 0px 3px 8px 1px rgba(110,110,110,1);
 	box-shadow: 0px 3px 8px 1px rgba(110,110,110,1);
 
 	&:hover {
@@ -37,8 +35,8 @@
 	position: absolute;
 	bottom: 4px;
 	-webkit-transform: translateY(-0%);
-  -ms-transform: translateY(-0%);
-  transform: translateY(-0%);
+		  -ms-transform: translateY(-0%);
+				  transform: translateY(-0%);
   width: 384px;
 
   transition: opacity 0.5s;

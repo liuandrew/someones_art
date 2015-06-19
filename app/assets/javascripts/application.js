@@ -16,6 +16,3 @@
 //= require requests
 //= require header
 
-
-$(function(){ $(document).foundation(); });
-

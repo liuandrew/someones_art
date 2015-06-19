@@ -6,7 +6,7 @@
 					<%= image_tag youtube_thumbnail_url(animation.youtube_id), class: "youtube_thumbnail" %>
 					<div class="animation-thumbnail-overlay">
 						<h3 class="index-name"><%= animation.name %></h3>
-						<h4 class="index-datetime"><%= animation.created_at.strftime("%B %e, %Y, %I:%M %p") %></h4>
+						<h4 class="index-datetime"><%= animation.created_at.strftime("%B %e, %Y") %></h4>
 					</div>
 				<% end %>
 			</div>
